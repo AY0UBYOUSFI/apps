@@ -3,7 +3,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,8 +27,8 @@ public class MainActivity2 extends AppCompatActivity {
         if (bundle == null || bundle.isEmpty()) {
             Toast.makeText(MainActivity2.this, "No Data received", Toast.LENGTH_LONG).show();
         } else {
-            N1 = Double.parseDouble(bundle.getString("number1"));
-            N2 = Double.parseDouble(bundle.getString("number2"));
+            N1 = Double.parseDouble(bundle.getString("number1")==null ? "0" : bundle.getString("number1"));
+            N2 = Double.parseDouble(bundle.getString("number2")==null ? "0" : bundle.getString("number2"));
             t.setText("N1: " + N1 + " N2: " + N2);
         }
 
